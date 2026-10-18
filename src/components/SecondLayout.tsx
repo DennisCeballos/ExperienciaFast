@@ -8,7 +8,6 @@ interface SecondLayoutProps {
 
 export default function SecondLayout({
   children,
-  currentPath,
   onNavigate,
 }: SecondLayoutProps) {
   return (

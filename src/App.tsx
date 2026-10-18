@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Home from './pages/Home';
 import Experiencia from './pages/Experiencia';
-import Layout from './components/layout';
+import Layout from './components/Layout';
 import FilmScoring from './pages/FilmScoring';
 
 export default function App() {
