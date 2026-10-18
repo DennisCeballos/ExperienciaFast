@@ -67,7 +67,7 @@ export default function Home() {
           preload="metadata"
           className="w-full max-h-[80vh] object-contain bg-black"
         >
-          <source src="/video-convertido.mp4" type="video/mp4" />
+          <source src="/video-convertido.webm" type="video/webm" />
           Tu navegador no soporta la reproducción de video.
         </video>
         <p className="text-xs text-brand-gray text-center uppercase tracking-widest mt-4">
