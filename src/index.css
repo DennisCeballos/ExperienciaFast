@@ -1,36 +1,75 @@
-/* src/index.css */
+
 @import "tailwindcss";
 
 @theme {
-  /* Fuentes compartidas */
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  
-  /* Colores: Portafolio */
+
   --color-brand-black: #111111;
   --color-brand-gray: #666666;
   --color-brand-light: #f9f9f9;
 
-  /* Colores: Experiencia Inmersiva */
-  --color-obra-dark:  #050505; 
-  --color-obra-light: #bb8265; 
-  --color-obra-gray: #a3a3a3;
+  /* Experiencia inmersiva */
+  --color-obra-dark: #050505;
+  --color-obra-light: #bb8265;
+  --color-obra-gray: #c4bbb4;
 }
 
-/* Animaciones y máscaras (se mantienen igual) */
+/* Desplazamiento y renderizado */
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+}
+
+/* Movimiento ambiental opcional */
 @keyframes tremble {
-  0% { transform: translate(0px, 0px) rotate(0deg); }
-  25% { transform: translate(1px, -1px) rotate(0.5deg); }
-  50% { transform: translate(-1px, 2px) rotate(-0.5deg); }
-  75% { transform: translate(-2px, -1px) rotate(0deg); }
-  100% { transform: translate(0px, 0px) rotate(0deg); }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(1px, -1px) rotate(0.2deg);
+  }
+  50% {
+    transform: translate(-1px, 1px) rotate(-0.2deg);
+  }
+  75% {
+    transform: translate(-1px, -1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 .animate-tremble {
-  animation: tremble 4s infinite ease-in-out alternate;
+  animation: tremble 7s infinite ease-in-out alternate;
 }
 
+/* Máscara reutilizable para imágenes */
 .mask-edges {
-  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
-  mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse,
+    black 35%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse,
+    black 35%,
+    transparent 100%
+  );
+}
+
+/* Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-tremble {
+    animation: none;
+  }
 }

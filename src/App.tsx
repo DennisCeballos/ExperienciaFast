@@ -3,19 +3,12 @@ import { useEffect, useState } from 'react';
 
 import Home from './pages/Home';
 import Experiencia from './pages/Experiencia';
-import Layout from './components/Layout';
 import FilmScoring from './pages/FilmScoring';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(
     window.location.pathname
   );
-
-  // Navegar y actualizar la URL
-  const handleNavigate = (path: string) => {
-    window.history.pushState({}, '', path);
-    setCurrentPath(path);
-  };
 
   // Permitir que funcionen los botones atrás y adelante
   useEffect(() => {
@@ -52,14 +45,7 @@ export default function App() {
   })();
 
   if (standardLayoutPaths.includes(currentPath)) {
-    return (
-      <Layout
-        currentPath={currentPath}
-        onNavigate={handleNavigate}
-      >
-        {content}
-      </Layout>
-    );
+    return (content);
   }
 
   return (content);
