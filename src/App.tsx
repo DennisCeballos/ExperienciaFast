@@ -1,9 +1,7 @@
-
 import { useEffect, useState } from 'react';
 
 import Home from './pages/Home';
 import Experiencia from './pages/Experiencia';
-import FilmScoring from './pages/FilmScoring';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(
@@ -28,19 +26,13 @@ export default function App() {
   const content = (() => {
     switch (currentPath) {
       case '/':
-        return <Home />;
-
-      case '/otraVersion':
-        return <FilmScoring />;
-
-      case '/creditos':
-        return <Home />;
-
-      case '/vistaFinal':
         return <Experiencia />;
 
-      default:
+      case '/antiguo':
         return <Home />;
+
+      default:
+        return <Experiencia />;
     }
   })();
 
